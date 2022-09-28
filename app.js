@@ -3,19 +3,26 @@ const menuMain = document.querySelector(".navbar-email");
 const menu =document.querySelector(".menu");
 const menuMobile = document.querySelector(".mobile-menu");
 const detallesCarrito = document.querySelector(".navbar-shopping-cart");
-const asideDetallesCarrito=document.querySelector(".product-detail");
+const asideDetailsCarrito=document.querySelector(".product-detail");
+const asideDetails=document.querySelector(".product-details");
+const closAsideDetails =document.querySelector(".product-detail-close");
+
 
 
 menuMain.addEventListener(("click"), popUpMenu);
 menu.addEventListener("click", inmenuMobile);
 detallesCarrito.addEventListener("click", aside);
+closAsideDetails.addEventListener("click", closeAsideDetails);
+
+
 
 function popUpMenu() {
     if (menuDesktop.classList.contains("active")) {
         menuDesktop.classList.remove("active");   
     }else{
         menuDesktop.classList.add("active");
-        asideDetallesCarrito.classList.remove("active");
+        asideDetailsCarrito.classList.remove("active");
+        
 
     }
 }
@@ -25,39 +32,37 @@ function inmenuMobile(){
 
     }else{
         menuMobile.classList.add("active");
-        asideDetallesCarrito.classList.remove("active");
+        asideDetailsCarrito.classList.remove("active");
+        
     }
 }
 
 function aside(){
-    if (asideDetallesCarrito.classList.contains("active")){
-        asideDetallesCarrito.classList.remove("active");
+    if (asideDetailsCarrito.classList.contains("active")){
+        asideDetailsCarrito.classList.remove("active");
 
     }else{
-        asideDetallesCarrito.classList.add("active")
+        asideDetailsCarrito.classList.add("active")
         menuMobile.classList.remove("active");
         menuDesktop.classList.remove("active");
+        asideDetails.classList.remove("active");
     }
 }
 
-/*
+function openAsideProductDetails(){
+    if (asideDetails.classList.contains("active")){
+        asideDetails.classList.remove("active");
+    }else{
+        asideDetails.classList.add("active");
+        asideDetailsCarrito.classList.remove("active");
 
-<div class="cards-container">
+    }
     
-<div class="product-card">
-  <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-  <div class="product-info">
-    <div>
-      <p>$120,00</p>
-      <p>Bike</p>
-    </div>
-    <figure>
-      <img src="./icons/bt_add_to_cart.svg" alt="">
-    </figure>
-  </div>
-</div>
-*/
+}
 
+function closeAsideDetails(){
+    asideDetails.classList.remove("active")
+}
 
 const cardContainer=document.querySelector(".cards-container");
 const productList=[];
@@ -89,6 +94,7 @@ function renderProducts(arr){
         productCard.classList.add("product-card");
         const imgCard =document.createElement("img");
         imgCard.setAttribute("src", product.image);
+        imgCard.addEventListener("click", openAsideProductDetails);
     
         const productInfo = document.createElement("div");
         productInfo.classList.add("product-info");
