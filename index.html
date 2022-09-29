@@ -96,15 +96,15 @@
         <div class="desktop-menu">
             <ul>
               <li>
-                <a href="/" class="title">My orders</a>
+                <a  class="my-orders" href="#" class="title">My orders</a>
               </li>
         
               <li>
-                <a href="/">My account</a>
+                <a class="account" href="#">My account</a>
               </li>
         
               <li>
-                <a href="/">Sign out</a>
+                <a href="#">Sign out</a>
               </li>
             </ul>
           </div>
@@ -178,7 +178,73 @@
           </button>
         </div>
       </aside>
+
+
+      <div class="my-order">
+        <div class="my-order-container">
+          <h1 class="title">My orders</h1>
     
+          <div class="my-order-content">
+            <div class="order">
+              <p>
+                <span>03.25.21</span>
+                <span>6 articles</span>
+              </p>
+              <p>$560.00</p>
+              <img src="./icons/flechita.svg" alt="arrow">
+            </div>
+    
+            <div class="order">
+              <p>
+                <span>03.25.21</span>
+                <span>6 articles</span>
+              </p>
+              <p>$560.00</p>
+              <img src="./icons/flechita.svg" alt="arrow">
+            </div>
+    
+            <div class="order">
+              <p>
+                <span>03.25.21</span>
+                <span>6 articles</span>
+              </p>
+              <p>$560.00</p>
+              <img src="./icons/flechita.svg" alt="arrow">
+            </div>
+    
+            <div class="order">
+              <p>
+                <span>03.25.21</span>
+                <span>6 articles</span>
+              </p>
+              <p>$560.00</p>
+              <img src="./icons/flechita.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="login">
+    <div class="form-container">
+      <h1 class="title">My account</h1>
+
+      <form action="/" class="form">
+        <div class="formContent">
+          <label for="name" class="label">Name</label>
+          <input type="text" id="name" placeholder="Teff" class="input input-name" disabled="false">
+
+
+          <label for="email" class="label">Email</label>
+          <input type="text" id="email" placeholder="platzi@example.com" class="input input-email" disabled ="false">
+
+          <label for="password" class="label">Password</label>
+          <input type="password" id="password" placeholder="*********" class="input input-password" disabled="false">
+        </div>
+        <input id="editButton " type="button" value="Edit" class="secondary-button primary-button  login-button">
+      </form>
+    </div>
+  </div>
+
 
 
   <script src="./app.js"></script>  

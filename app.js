@@ -22,6 +22,8 @@ function popUpMenu() {
     }else{
         menuDesktop.classList.add("active");
         asideDetailsCarrito.classList.remove("active");
+        myOrderContainer.classList.remove("active");
+        loginContainer.classList.remove("active");
         
 
     }
@@ -34,6 +36,8 @@ function inmenuMobile(){
         menuMobile.classList.add("active");
         asideDetailsCarrito.classList.remove("active");
         asideDetails.classList.remove("active");
+        myOrderContainer.classList.remove("active");
+        loginContainer.classList.remove("active");
         
     }
 }
@@ -47,6 +51,8 @@ function aside(){
         menuMobile.classList.remove("active");
         menuDesktop.classList.remove("active");
         asideDetails.classList.remove("active");
+        myOrderContainer.classList.remove("active");
+        loginContainer.classList.remove("active");
     }
 }
 
@@ -56,6 +62,8 @@ function openAsideProductDetails(){
     }else{
         asideDetails.classList.add("active");
         asideDetailsCarrito.classList.remove("active");
+        myOrderContainer.classList.remove("active");
+        loginContainer.classList.remove("active");
 
     }
     
@@ -124,3 +132,50 @@ function renderProducts(arr){
 }
 
 renderProducts(productList);
+
+
+//Mis ordenes de compra//
+
+const myOrders = document.querySelector(".my-orders");
+const myOrderContainer =document.querySelector(".my-order");
+
+myOrders.addEventListener("click",openMyOrdersList);
+
+function openMyOrdersList(){
+    if (myOrderContainer.classList.contains("active")){
+        myOrderContainer.classList.remove("active");
+
+    }else{
+        myOrderContainer.classList.add("active");
+        menuDesktop.classList.remove("active");  
+    
+        
+    }
+}
+//login//
+
+const account = document.querySelector(".account");
+const loginContainer =document.querySelector(".login");
+const editButton = document.querySelector(".login-button");
+
+account.addEventListener("click",openLogin);
+editButton.addEventListener("click", openLoginEdit);
+
+function openLogin(){
+    if (loginContainer.classList.contains("active")){
+        loginContainer.classList.remove("active");
+
+    }else{
+        loginContainer.classList.add("active");
+        menuDesktop.classList.remove("active");  
+    
+        
+    }
+}
+function openLoginEdit() {
+    document.querySelectorAll(".input").disabled =true;
+    
+
+}
+
+
