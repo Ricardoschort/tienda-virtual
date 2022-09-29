@@ -33,6 +33,7 @@ function inmenuMobile(){
     }else{
         menuMobile.classList.add("active");
         asideDetailsCarrito.classList.remove("active");
+        asideDetails.classList.remove("active");
         
     }
 }
