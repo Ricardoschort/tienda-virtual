@@ -139,6 +139,9 @@ renderProducts(productList);
 const myOrders = document.querySelector(".my-orders");
 const myOrderContainer =document.querySelector(".my-order");
 
+
+
+
 myOrders.addEventListener("click",openMyOrdersList);
 
 function openMyOrdersList(){
@@ -147,35 +150,51 @@ function openMyOrdersList(){
 
     }else{
         myOrderContainer.classList.add("active");
-        menuDesktop.classList.remove("active");  
+        menuDesktop.classList.remove("active");
+        
     
         
     }
 }
 //login//
 
+
 const account = document.querySelector(".account");
 const loginContainer =document.querySelector(".login");
-const editButton = document.querySelector(".login-button");
+const editButton = document.querySelector(".login-button-edit");
+const saveButton = document.querySelector(".login-button-save");
+const inputs =document.querySelectorAll("input");
+
+
+
 
 account.addEventListener("click",openLogin);
-editButton.addEventListener("click", openLoginEdit);
+editButton.addEventListener("click", edit)
+saveButton.addEventListener("click", save)
 
 function openLogin(){
     if (loginContainer.classList.contains("active")){
         loginContainer.classList.remove("active");
 
     }else{
+        
         loginContainer.classList.add("active");
-        menuDesktop.classList.remove("active");  
-    
+        menuDesktop.classList.remove("active");        
         
     }
 }
-function openLoginEdit() {
-    document.querySelectorAll(".input").disabled =true;
-    
+
+function save(){
+      editButton.style.display="block";
+      saveButton.style.display="none";
+      loginContainer.classList.remove("active");
 
 }
+function edit(){
+    inputs.forEach(input => {
+    input.disabled=false; 
+    editButton.style.display="none";
+    saveButton.style.display="block"
+     });
 
-
+}

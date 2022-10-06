@@ -3,7 +3,7 @@
     --black: #000000;
     --very-light-pink: #C7C7C7;
     --text-input-field: #F7F7F7;
-    --hospital-green: #ACD9B2;
+    --hospital-green: #008000;
     --sm: 14px;
     --md: 16px;
     --lg: 18px;
@@ -49,7 +49,7 @@
   .navbar-left ul li a,
   .navbar-right ul li a {
     text-decoration: none;
-    color: #633991;
+    color: #633991; 
     border: 1px solid var(--white);
     padding: 8px;
     border-radius: 8px;
@@ -258,18 +258,7 @@ font-size: var(--md);
 font-weight: bold;
 }
 
-.primary-button {
-background-color: var(--hospital-green);
-border-radius: 8px;
-border: none;
-color: var(--white);
-width: 100%;
-cursor: pointer;
-font-size: var(--md);
-font-weight: bold;
-height: 50px;
 
-}
 
 /*========MAIN===========*/
 
@@ -386,17 +375,7 @@ color: var(--very-light-pink);
   margin-top: 0;
   margin-bottom: 36px;
 }
-.primary-button {
-  background-color: var(--hospital-green);
-  border-radius: 8px;
-  border: none;
-  color: var(--white);
-  width: 100%;
-  cursor: pointer;
-  font-size: var(--md);
-  font-weight: bold;
-  height: 50px;
-}
+
 .add-to-cart-button {
   display: flex;
   align-items: center;
@@ -515,10 +494,16 @@ color: var(--very-light-pink);
   font-weight: bold;
   height: 50px;
 }
-.login-button {
+.login-button-save {
   margin-top: 14px;
   margin-bottom: 30px;
+  display: none;
 
+}
+
+.login-button-edit {
+  margin-top: 14px;
+  margin-bottom: 30px;
 }
 .input {
   background-color: var(--text-input-field);
@@ -533,6 +518,7 @@ color: var(--very-light-pink);
 .input-email,
 .input-password {
   margin-bottom: 22px;
+  
 }
 .primary-button {
   background-color: var(--hospital-green);
